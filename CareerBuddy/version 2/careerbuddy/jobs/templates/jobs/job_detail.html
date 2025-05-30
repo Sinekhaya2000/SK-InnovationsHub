@@ -1,0 +1,16 @@
+{% extends 'jobs/base.html' %}
+
+{% block title %}{{ job.title }} - CareerBuddy{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="card shadow-lg">
+        <div class="card-body">
+            <h1 class="text-primary">{{ job.title }}</h1>
+            <p class="text-muted">Posted on: {{ job.posted_at|date:"F d, Y" }}</p>
+            <p class="card-text">{{ job.description }}</p>
+            <a href="{% url 'job_list' %}" class="btn btn-secondary mt-3">Back to Jobs</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
