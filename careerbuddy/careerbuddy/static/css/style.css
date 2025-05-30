@@ -1,0 +1,29 @@
+body {
+    background-image: url('../images/background.png'); /* Adjusted path */
+    background-size: cover;
+    background-position: center center;
+}
+
+
+  
+/* Example additional styles */
+.hero-section {
+    background: rgba(0, 0, 0, 0.5); /* Darken background */
+    padding: 50px;
+    border-radius: 10px;
+}
+
+h1 {
+    color: #fff;
+    font-size: 3rem;
+}
+
+p {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+/* ✅ TEST STYLE: Green Border to check if CSS is loading */
+body {
+    border: 10px solid limegreen;
+}
