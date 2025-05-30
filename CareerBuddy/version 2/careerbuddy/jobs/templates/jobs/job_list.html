@@ -1,0 +1,53 @@
+{% extends 'jobs/base.html' %}
+
+{% block title %}Available Jobs - CareerBuddy{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-white text-center fw-bold">🚀 Available Jobs</h1>
+    <p class="text-light text-center">Find your next opportunity below!</p>
+
+    <div class="row">
+        {% for job in jobs %}
+            <div class="col-md-4">
+                <div class="card job-card shadow-lg border-0">
+                    <div class="card-body">
+                        <h4 class="card-title text-primary">{{ job.title }}</h4>
+                        <p class="card-text text-muted">{{ job.description|truncatewords:20 }}</p>
+                        <a href="{% url 'job_detail' job.id %}" class="btn btn-gradient">View Details</a>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <p class="text-danger text-center">No jobs available at the moment.</p>
+        {% endfor %}
+    </div>
+</div>
+
+<style>
+    body {
+        background: linear-gradient(to right, #007bff, #6f42c1);
+        font-family: 'Poppins', sans-serif;
+    }
+    .job-card {
+        background: #fff;
+        border-radius: 10px;
+        transition: transform 0.3s ease-in-out;
+    }
+    .job-card:hover {
+        transform: scale(1.05);
+    }
+    .btn-gradient {
+        background: linear-gradient(to right, #007bff, #6610f2);
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+    .btn-gradient:hover {
+        background: linear-gradient(to right, #6610f2, #007bff);
+        color: white;
+    }
+</style>
+{% endblock %}
